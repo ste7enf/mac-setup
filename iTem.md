@@ -1,4 +1,4 @@
-## 2. iTerm 2 配置
+## iTerm 2 配置
 
 优秀的Terminal，开发必备！官网下载 [iTerm2](http://iterm2.com/)。
 
