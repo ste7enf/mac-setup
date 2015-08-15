@@ -1,0 +1,49 @@
+## 4.Java & Maven & Eclipse
+官网下载Java 7.x or later, 或者Apple官网下载[Java 6](https://support.apple.com/kb/DL1572?locale=zh_CN)，下载Maven，版本根据实际选择
+
+### 设置环境变量
+		
+	# 默认jdk 1.6
+	export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+	export MAVEN_HOME=/Library/apache-maven-2.2.1
+	export PATH=${JAVA_HOME}/bin:${MAVEN_HOME}/bin:$PATH
+	
+	alias mvne='mvn eclipse:eclipse' #自定义alias
+	
+  执行 `source ./zshrc` 立即生效
+
+### eclipse svn 插件
+支持java 6的eclipse最高版本为`4.4`。
+
+注意`subversion`与eclipse插件`Subclipse`对版本匹配.  
+
+Subclipse 1.8.x includes and requires Subversion 1.7.x client features and working copy format.
+
+Subclipse 1.10.x includes and requires Subversion 1.8.x client features and working copy format.
+
+#### 安装Subversion 1.8.x
+
+	brew install --universal --java subversion 
+
+通过浏览器下载[serf-1.3.8.tar.bz2](http://fossies.org/linux/www/serf-1.3.8.tar.bz2)，更名为subversion--serf-1.3.8.tar.bz2
+保存至`/Library/Caches/Homebrew/subversion-1.8.13.tar.bz2`路径下，就OK了～解决了shell不能翻出去的苦恼了～
+
+    svntools have been installed to:
+      /usr/local/opt/subversion/libexec
+
+    You may need to link the Java bindings into the Java Extensions folder:
+      sudo mkdir -p /Library/Java/Extensions
+      sudo ln -s /usr/local/lib/libsvnjavahl-1.dylib /Library/Java/Extensions/libsvnjavahl-1.dylib
+
+    Bash completion has been installed to:
+      /usr/local/etc/bash_completion.d
+
+#### 安装Subclipse 1.10.x
+
+[subclipse](http://subclipse.tigris.org/servlets/ProjectProcess;jsessionid=48A57E61484A6FF9AA5194EDB71BED1D?pageID=p4wYuA)官网下载该插件
+
+eclipse Install New Software
+
+	http://subclipse.tigris.org/update_1.10.x
+
+`Xcode command line tools`集成的Subversion未安装`JavaHL`,所以最好用brew安装，包依赖关系处理得很好
