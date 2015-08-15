@@ -8,4 +8,4 @@ Installing Development Environment on Mac OS X
 * [Java&Maven&Eclipse](3. Java&Maven&Eclipse.md)
 * [Sublime Text](4. Sublime Text.md)
 * [SouapUI hang](5. SoapUI.md)
-* [config]()
+* [Config](Config)
