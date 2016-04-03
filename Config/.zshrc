@@ -5,35 +5,40 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="jtriley"
+ZSH_THEME="sporty_256"
+#ZSH_THEME="agnoster"robbyrussell
+
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ll="ls -all"
+alias ll='ls -all'
 alias mvne='mvn eclipse:eclipse'
+alias mysqlstart='sudo /usr/local/mysql/./bin/mysqld_safe'
+alias mysqlshut='/usr/local/mysql/bin/./mysqladmin shutdown -uroot -p'
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# Mac默认 JDK 6
-export JAVA_6_HOME=`/usr/libexec/java_home -v 1.6`  
-# 设置 JDK 7  
-# export JAVA_7_HOME=`/usr/libexec/java_home -v 1.7`  
-# 设置 JDK 8  
-# export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`  
-#默认JDK 6  
-#export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home  
 
-export JAVA_HOME=$JAVA_6_HOME
-# export CLASSPATH=.:$JAVA_HOME\lib\dt.jar:$JAVA_HOME\lib\tools.jar;
-  
-#alias  
-alias jdk6='export JAVA_HOME=$JAVA_6_HOME'
-# alias jdk7="export JAVA_HOME=$JAVA_7_HOME"  
-# alias jdk8="export JAVA_HOME=$JAVA_8_HOME" 
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export MAVEN_HOME=/Library/apache-maven-2.2.1
+export ANT_HOME=/Library/apache-ant-1.8.4
+export ANTX_HOME=/Users/ste7en/Documents/trunk/antx
 
-export PATH=${JAVA_HOME}/bin:${MAVEN_HOME}/bin:$PATH
+# Start JAVA
+export JAVA_6_HOME=`/usr/libexec/java_home -v 1.6`
+# export JAVA_7_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8` 
+# JDK 6
+export JAVA_HOME=$JAVA_6_HOME
+export CLASSPATH=.:$JAVA_HOME\lib\dt.jar:$JAVA_HOME\lib\tools.jar;
+#alias  
+alias jdk6='export JAVA_HOME=$JAVA_6_HOME && echo Set JDK 6'
+alias jdk7='export JAVA_HOME=$JAVA_7_HOME && echo Set JDK 6'
+alias jdk8='export JAVA_HOME=$JAVA_7_HOME && echo Set JDK 8'
+# end JAVA  rm ${JAVA_HOME}/bin:
+
+export PATH=${MAVEN_HOME}/bin:${ANT_HOME}/bin:${ANTX_HOME}/dist/antx/bin:$PATH
 
 # export CLOUDENGINE_HOME=/Library/cloudengine-3.2.8.0
 
